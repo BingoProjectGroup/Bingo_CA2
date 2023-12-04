@@ -4,12 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>User Login</title>
+<link rel="stylesheet" href="log.css" />
 </head>
 <body>
   <form action="/login" method="POST">
     <div>  
     <label for="email">Registered Email:</label>
     <input type="text", name="email" required>
+    <div id="emailError" class="error"></div>
     <br>
     <label for="password">Password:</label>
     <input type="password", name="password" required>
@@ -17,6 +19,9 @@
     <button type="submit" name="submit">Login</button>
     </div>
 
-  </form>    
+  </form> 
+
+  <script src="validate.js"></script>
+ 
 </body>
 </html>
