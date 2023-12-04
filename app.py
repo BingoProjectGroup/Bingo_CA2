@@ -49,7 +49,7 @@ def register():
     password=request.form['password']
     print(username,email)
     cur = mysql.cursor() #create a connection to the SQL instance
-    s='''INSERT INTO user(username, email, password) VALUES('{}','{}','{}');'''.format(username,email,password)
+    s="INSERT INTO user(username, email, password) VALUES('{}','{}','{}');".format(username,email,password)
     app.logger.info(s)
     cur.execute(s)
     mysql.commit()
@@ -67,7 +67,7 @@ def login():
     #print(email,studentId)
     cur = mysql.cursor() #create a connection to the SQL instance
     
-    cur.execute('''SELECT * FROM user WHERE email=email)''')
+    cur.execute('''SELECT * FROM user WHERE email=%s AND password=%s,(email,password))''')
     user=cur.fetchone()
 
     if user:
