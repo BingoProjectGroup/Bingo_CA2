@@ -88,8 +88,8 @@ def hello(): # Name of the method
     Result={}
     Result['Username']=row[0].replace('\n',' ')
     Result['Email']=row[1]
-    Result['ID']=row[2]
-    Result['Password']=row[3]
+    Result['Password']=row[2]
+    Result['ID']=row[3]
     Results.append(Result)
   response={'Results':Results, 'count':len(Results)}
   ret=app.response_class(
