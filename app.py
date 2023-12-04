@@ -55,6 +55,27 @@ def register():
     return render_template('register.html')
 
   return '{"Result":"Success"}'
+
+
+@app.route("/login", methods=['GET', 'POST']) #Add Student
+def login():
+  if request.method == 'POST':
+    email = request.form['email']
+    password=request.form['password']
+    #print(email,studentId)
+    # cur = mysql.cursor() #create a connection to the SQL instance
+    # s='''INSERT INTO students(studentName, email, studentId, password) VALUES('{}','{}','{}','{}');'''.format(name,email,studentId,password)
+    # app.logger.info(s)
+    # cur.execute(s)
+    # mysql.commit()
+  else:
+    return render_template('login.html')
+
+  return '{"Result":"Success"}'
+
+
+
+
 @app.route("/") #Default - Show Data
 def hello(): # Name of the method
   cur = mysql.cursor() #create a connection to the SQL instance
