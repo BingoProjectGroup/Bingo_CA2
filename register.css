@@ -14,18 +14,27 @@ body{
     justify-content: center;
     align-items:center;
     min-height: 100vh;
-    background: white;
+    background: url(img1.jpg)no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 label{
     font-size: 12px;
+    color: #000000;
+   
 }
 
 .wrapper{
     width: 750px;
-    background: wheat;
+    background: rgba(255, 255, 255, .1);
+    border: 2px solid rgba(255, 255, 255, .2);
+    box-shadow: 0 0 10px rgba(255, 255, 255, .2);
+    backdrop-filter: blur(50px);
     border-radius: 10px;
-    color:floralwhite
+    color:white;
+    padding: 40px 35px 55px;
+    margin:0 10px;
 }
 
 
@@ -41,7 +50,7 @@ label{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    background: slategray;
+    background: rgb(23, 55, 87);
 
 }
 
@@ -61,7 +70,7 @@ label{
     border: 2px solid rgba(255, 255, 255, .2);
     outline: none;
     font-size: 16px;
-    color: white;
+    color:black;
     border-radius: 6px;
 
 }
@@ -107,4 +116,13 @@ label{
     accent-color: white;
     margin-right: 5px;
 
+}
+
+
+@media(max-width:576px){
+    .input.box.input.field{
+        width: 100%;
+        margin: 10px 0;
+        
+    }
 }
