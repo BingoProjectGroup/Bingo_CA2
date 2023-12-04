@@ -59,16 +59,18 @@ def register():
   return '{"Result":"Success"}'
 
 
-@app.route("/login", methods=['GET', 'POST']) #Add Student
+@app.route("/login", methods=['GET', 'POST']) #Add User
 def login():
   if request.method == 'POST':
     email = request.form['email']
     password=request.form['password']
     #print(email,studentId)
-    # cur = mysql.cursor() #create a connection to the SQL instance
-    # s='''INSERT INTO students(studentName, email, studentId, password) VALUES('{}','{}','{}','{}');'''.format(name,email,studentId,password)
-    # app.logger.info(s)
-    # cur.execute(s)
+    cur = mysql.cursor() #create a connection to the SQL instance
+    s='''SELECT * FROM user WHERE email="20004760@mydbs.ie")''';
+  
+     app.logger.info(s)
+     cur.execute(s)
+      print(s);
     # mysql.commit()
   else:
     return render_template('login.html')
