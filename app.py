@@ -44,7 +44,7 @@ def yest(): # Name of the method
 @app.route("/register", methods=['GET', 'POST']) #Add Student
 def register():
   if request.method == 'POST':
-    name = request.form['username']
+    username = request.form['username']
     email = request.form['email']
     password=request.form['password']
     print(name,email)
