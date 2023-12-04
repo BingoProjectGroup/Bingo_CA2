@@ -5,9 +5,11 @@ import mysql.connector
 from flask_cors import CORS
 import json
 
-mysql = mysql.connector.connect(user='web', password='webPass',
-  host='127.0.0.1',
-  database='student')
+ mysql = mysql.connector.connect(user='web', password='webPass',
+   host='127.0.0.1',
+   database='user_register')
+
+
 
 from logging.config import dictConfig
 
@@ -42,13 +44,12 @@ def yest(): # Name of the method
 @app.route("/register", methods=['GET', 'POST']) #Add Student
 def register():
   if request.method == 'POST':
-    name = request.form['name']
+    name = request.form['username']
     email = request.form['email']
-    studentId=request.form['student-id']
     password=request.form['password']
-    print(name,email,studentId)
+    print(name,email)
     cur = mysql.cursor() #create a connection to the SQL instance
-    s='''INSERT INTO students(studentName, email, studentId, password) VALUES('{}','{}','{}','{}');'''.format(name,email,studentId,password)
+    s='''INSERT INTO students(username, email, password) VALUES('{}','{}','{}');'''.format(username,email,password)
     app.logger.info(s)
     cur.execute(s)
     mysql.commit()
@@ -80,12 +81,12 @@ def login():
 @app.route("/") #Default - Show Data
 def hello(): # Name of the method
   cur = mysql.cursor() #create a connection to the SQL instance
-  cur.execute('''SELECT * FROM students''') # execute an SQL statment
+  cur.execute('''SELECT * FROM user''') # execute an SQL statment
   rv = cur.fetchall() #Retreive all rows returend by the SQL statment
   Results=[]
   for row in rv: #Format the Output Results and add to return string
     Result={}
-    Result['Name']=row[0].replace('\n',' ')
+    Result['Username']=row[0].replace('\n',' ')
     Result['Email']=row[1]
     Result['ID']=row[2]
     Result['Password']=row[3]
