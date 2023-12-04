@@ -67,10 +67,9 @@ def login():
     #print(email,studentId)
     cur = mysql.cursor() #create a connection to the SQL instance
     s='''SELECT * FROM user WHERE email="20004760@mydbs.ie")''';
-  
-     app.logger.info(s)
-     cur.execute(s)
-      print(s);
+    app.logger.info(s)
+    cur.execute(s)
+    print(s);
     # mysql.commit()
   else:
     return render_template('login.html')
