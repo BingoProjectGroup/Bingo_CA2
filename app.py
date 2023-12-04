@@ -47,7 +47,7 @@ def register():
     username = request.form['username']
     email = request.form['email']
     password=request.form['password']
-    print(name,email)
+    print(username,email)
     cur = mysql.cursor() #create a connection to the SQL instance
     s='''INSERT INTO user(username, email, password) VALUES('{}','{}','{}');'''.format(username,email,password)
     app.logger.info(s)
