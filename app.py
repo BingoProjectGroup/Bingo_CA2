@@ -39,13 +39,15 @@ def yest(): # Name of the method
  return("Hello World!<BR/>THIS IS YET ANOTHER TEST!") #indent this line
 
 @app.route("/register", methods=['GET', 'POST']) #Add Student
-def add():
+def register():
   if request.method == 'POST':
     name = request.form['name']
     email = request.form['email']
-    print(name,email)
+    studentId=request.form['student-id']
+    password=request.form['password']
+    print(name,email,studentId)
     cur = mysql.cursor() #create a connection to the SQL instance
-    s='''INSERT INTO students(studentName, email) VALUES('{}','{}');'''.format(name,email)
+    s='''INSERT INTO students(studentName, email, studentId, password) VALUES('{}','{}','{}','{}');'''.format(name,email,studentId,password)
     app.logger.info(s)
     cur.execute(s)
     mysql.commit()
@@ -64,6 +66,7 @@ def hello(): # Name of the method
     Result['Name']=row[0].replace('\n',' ')
     Result['Email']=row[1]
     Result['ID']=row[2]
+    Result['Password']=row[3]
     Results.append(Result)
   response={'Results':Results, 'count':len(Results)}
   ret=app.response_class(
