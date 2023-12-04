@@ -67,7 +67,7 @@ def login():
     #print(email,studentId)
     cur = mysql.cursor() #create a connection to the SQL instance
     
-    cur.execute('''SELECT * FROM user WHERE email="20004760@mydbs.ie")''')
+    cur.execute('''SELECT * FROM user WHERE email=email)''')
     user=cur.fetchone()
 
     if user:
