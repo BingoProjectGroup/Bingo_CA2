@@ -91,7 +91,7 @@ def login():
     if record:
       session['loggedin']=True
       session['username']=record[1];
-      return redirect(url_for('home'))
+      return redirect(url_for('dashboard'))
 
     else:
       msg='Incorrect username//password. Try again!'
