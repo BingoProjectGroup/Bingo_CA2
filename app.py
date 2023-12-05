@@ -59,6 +59,19 @@ def register():
   return '{"Result":"Success"}'
 
 
+# @app.route("/login", methods=['GET', 'POST']) #Add Student
+# def login():
+#   if request.method == 'POST':
+#     email = request.form['email']
+#     password=request.form['password']
+#     #print(email,studentId)
+#     # cur = mysql.cursor() #create a connection to the SQL instance
+#     # s='''INSERT INTO students(studentName, email, studentId, password) VALUES('{}','{}','{}','{}');'''.format(name,email,studentId,password)
+#     # app.logger.info(s)
+#     # cur.execute(s)
+#     # mysql.commit()
+#   else:
+#     return render_template('login.html')
 @app.route("/login", methods=['GET', 'POST']) #Add User
 def login():
   if request.method == 'POST':
@@ -77,30 +90,18 @@ def login():
   else:
     return render_template('login.html')
 
-  return '{"Result":"Success"}'
+#   return '{"Result":"Success"}'
 
 
+@app.route("/") #Default - DefaultHome
+def index():
+  return render_template('index.html');
 
 
-@app.route("/") #Default - Show Data
-def hello(): # Name of the method
-  cur = mysql.cursor() #create a connection to the SQL instance
-  cur.execute('''SELECT * FROM user''') # execute an SQL statment
-  rv = cur.fetchall() #Retreive all rows returend by the SQL statment
-  Results=[]
-  for row in rv: #Format the Output Results and add to return string
-    Result={}
-    Result['Username']=row[0].replace('\n',' ')
-    Result['Email']=row[1]
-    Result['Password']=row[2]
-    Result['ID']=row[3]
-    Results.append(Result)
-  response={'Results':Results, 'count':len(Results)}
-  ret=app.response_class(
-    response=json.dumps(response),
-    status=200,
-    mimetype='application/json'
-  )
+@app.route("/") #Dashboard
+def dashboard():
+  return render_template('dashboard.html');
+
   return ret #Return the data in a string format
 if __name__ == "__main__":
-  app.run(host='0.0.0.0',port='8080', ssl_context=('cert.pem', 'privkey.pem')) #Run the flask app at port 8080
+  app.run(debug=True, host='0.0.0.0',port='8080', ssl_context=('cert.pem', 'privkey.pem')) #Run the flask app at port 8080
