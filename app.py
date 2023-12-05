@@ -85,7 +85,7 @@ def login():
     #print(email,studentId)
     cur = mysql.cursor() #create a connection to the SQL instance
     
-    cur.execute('SELECT * FROM user WHERE email=%s AND password=%s',(email,password)))
+    cur.execute('SELECT * FROM user WHERE email=%s AND password=%s',(email,password))
     record=cur.fetchone()
 
     if record:
