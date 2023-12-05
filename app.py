@@ -98,7 +98,11 @@ def login():
       
   return render_template('login.html',msg=msg)
 
-#   return '{"Result":"Success"}'
+@app.route("/logout")
+def logout():
+  session.pop('loggedin', None)
+  session.pop('username', None)
+  return redirect(url_for('login'))
 
 
 @app.route("/") #Default - DefaultHome
