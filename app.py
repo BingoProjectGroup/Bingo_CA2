@@ -65,15 +65,15 @@ def login():
     email = request.form['email']
     password=request.form['password']
     #print(email,studentId)
-    cur = mysql.cursor() #create a connection to the SQL instance
+    #cur = mysql.cursor() #create a connection to the SQL instance
     
-    cur.execute('''SELECT * FROM user WHERE email=%s AND password=%s,(email,password))''')
-    user=cur.fetchone()
+    #cur.execute('''SELECT * FROM user WHERE email=%s AND password=%s,(email,password))''')
+    #user=cur.fetchone()
 
-    if user:
-      return "Logged In"
-    else:
-      return "Login Failed"
+    #if user:
+     # return "Logged In"
+    #else:
+     # return "Login Failed"
   else:
     return render_template('login.html')
 
