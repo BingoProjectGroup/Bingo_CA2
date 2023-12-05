@@ -41,10 +41,6 @@ app.secret_key="secret key"
 def test(): # Name of the method
  return("Hello World!<BR/>THIS IS ANOTHER TEST!") #indent this line
 
-@app.route("/yest")#URL leading to method
-def yest(): # Name of the method
- return("Hello World!<BR/>THIS IS YET ANOTHER TEST!") #indent this line
-
 @app.route("/register", methods=['GET', 'POST']) #Add Student
 def register():
   if request.method == 'POST':
@@ -63,20 +59,7 @@ def register():
   return '{"Result":"Success"}'
 
 
-# @app.route("/login", methods=['GET', 'POST']) #Add Student
-# def login():
-#   if request.method == 'POST':
-#     email = request.form['email']
-#     password=request.form['password']
-#     #print(email,studentId)
-#     # cur = mysql.cursor() #create a connection to the SQL instance
-#     # s='''INSERT INTO students(studentName, email, studentId, password) VALUES('{}','{}','{}','{}');'''.format(name,email,studentId,password)
-#     # app.logger.info(s)
-#     # cur.execute(s)
-#     # mysql.commit()
-#   else:
-#     return render_template('login.html')
-@app.route("/login", methods=['GET', 'POST']) #Add User
+@app.route("/login", methods=['GET', 'POST'])
 def login():
   msg=''
   if request.method == 'POST':
