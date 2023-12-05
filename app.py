@@ -4,6 +4,8 @@ from flask import request
 import mysql.connector
 from flask_cors import CORS
 import json
+import session, redirect, url_for
+
 
 mysql = mysql.connector.connect(user='web', password='webPass',
   host='127.0.0.1',
@@ -32,6 +34,8 @@ app = Flask(__name__)
 CORS(app)
 # My SQL Instance configurations
 # Change the HOST IP and Password to match your instance configurations
+
+app.secret_key="secret key"
 
 @app.route("/test")#URL leading to method
 def test(): # Name of the method
@@ -78,17 +82,21 @@ def login():
     email = request.form['email']
     password=request.form['password']
     #print(email,studentId)
-    #cur = mysql.cursor() #create a connection to the SQL instance
+    cur = mysql.cursor() #create a connection to the SQL instance
     
-    #cur.execute('''SELECT * FROM user WHERE email=%s AND password=%s,(email,password))''')
-    #user=cur.fetchone()
+    cur.execute('''SELECT * FROM user WHERE email=%s AND password=%s,(email,password))''')
+    record=cur.fetchone()
 
-    #if user:
-     # return "Logged In"
-    #else:
-     # return "Login Failed"
+    if record:
+      session['loggedin']=True
+      session['username']=record[1];
+      return redirect(url_for('home'))
+
+    else:
+      msg='Incorrect username//password. Try again!'
+      
   else:
-    return render_template('login.html')
+    return render_template('login.html',msg=msg)
 
 #   return '{"Result":"Success"}'
 
@@ -98,9 +106,9 @@ def index():
   return render_template('index.html');
 
 
-@app.route("/") #Dashboard
+@app.route("/dashboard") #Dashboard
 def dashboard():
-  return render_template('dashboard.html');
+  return render_template('dashboard.html', username=session['username']);
 
   return ret #Return the data in a string format
 if __name__ == "__main__":
