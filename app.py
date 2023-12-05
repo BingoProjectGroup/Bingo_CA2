@@ -54,7 +54,7 @@ def register():
     cur.execute(s)
     mysql.commit()
   else:
-    return render_template('register.html')
+    return render_template('register1.html')
 
   return '{"Result":"Success"}'
 
