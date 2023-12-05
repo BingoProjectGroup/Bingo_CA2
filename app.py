@@ -95,8 +95,7 @@ def login():
     else:
       msg='Incorrect username//password. Try again!'
       
-  else:
-    return render_template('login.html',msg=msg)
+  return render_template('login.html',msg=msg)
 
 #   return '{"Result":"Success"}'
 
