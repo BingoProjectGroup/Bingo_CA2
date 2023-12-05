@@ -4,7 +4,7 @@ from flask import request
 import mysql.connector
 from flask_cors import CORS
 import json
-import session, redirect, url_for
+from flask import session, redirect, url_for
 
 
 mysql = mysql.connector.connect(user='web', password='webPass',
