@@ -1,1 +1,44 @@
-<h1>Default Page<h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <nav>
+    <a href="#" onclick="showContent('home')">Home</a>
+    <a href="#" onclick="showContent('about')">About</a>
+    <a href="#" onclick="showContent('contact')">Contact</a>
+  </nav>
+  <div class="content" id="home">
+    <P>A library is not only an institution that gathers knowledge, but also one that makes it possible to create and add to the body 
+      of knowledge through experience. The concept of the library as a meeting place or a hands-on creative space is based on the 
+      intuition that when a library is thriving—lively and full of activity—then something unexpected, ambitious, or transformative 
+      may take place.</P>
+    <blockquote>
+      <p>
+        "Who Needs a Librarian and Cataloger When You Have Google and Internet? Well, Who Needs a Teacher When You Have Wikipedia?
+        And, Who Needs a Doctor When You Have WebMD? Just as the Wikipedia Doesn't Replace the Teacher, and WebMD Doesn’t
+        Replace the Doctor, In the Same Way, Google Search and Internet Doesn’t Replace the Librarian and Cataloger."
+      </p>
+      <cite>Salman Haider</cite>
+    </blockquote>
+  </div>
+  
+
+  <div class="content" id="about" style="display: none;">
+    <h1>About Us</h1>
+    <p>This is the about page content.</p>
+  </div>
+
+  <div class="content" id="contact" style="display: none;">
+    <h1>Contact Us</h1>
+    <p>This is the contact page content.</p>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
+
