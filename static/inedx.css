@@ -1,0 +1,70 @@
+body {
+    background-image: url('images/lib2.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;   
+  }
+  
+  nav {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: right;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin: 0 10px;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    background-color: #555;
+  }
+  
+  .content {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); 
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);    
+  }
+
+  blockquote {
+    background-color: #e0f7fa;
+    padding: 20px;
+    border-left: 5px solid #0097a7; 
+    margin: 0;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  blockquote p {
+    margin: 0;
+    font-style: italic;
+  }
+
+
+  cite {
+    display: block;
+    text-align: right;
+    color: #546e7a; 
+  }
+
+  
+  p {
+    color: #0c0c0c;
+  }
+  
+  button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
