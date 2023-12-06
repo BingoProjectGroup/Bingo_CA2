@@ -4,7 +4,31 @@ body {
     background-attachment: fixed;
     background-size: cover;
   }
+
+  nav {
+    background-color: #955c5c80;
+    color: white;
+    padding: 10px;
+    display: flex;
+  }
   
+  nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin: 0 10px;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    background-color: #555;
+  }
+  
+  .logo img {
+    max-width: 35px; 
+    height: auto;
+  }
+
 form {
     max-width: 400px;
     margin: 50px auto;
