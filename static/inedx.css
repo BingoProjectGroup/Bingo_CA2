@@ -6,7 +6,7 @@ body {
   }
   
   nav {
-    background-color: #333;
+    background-color: #552323ac;
     color: white;
     padding: 10px;
     text-align: right;
@@ -22,6 +22,11 @@ body {
   
   nav a:hover {
     background-color: #555;
+  }
+
+  .logo img {
+    max-width: 35px; 
+    height: auto;
   }
   
   .content {
@@ -68,3 +73,23 @@ body {
     cursor: pointer;
   }
   
+  
+  form {
+    margin-top: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+

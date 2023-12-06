@@ -8,6 +8,9 @@
 <body>
 
   <nav>
+    <div class="logo">
+        <img src="images/bookicon3.png" alt="Logo">
+      </div>
     <a href="#" onclick="showContent('home')">Home</a>
     <a href="#" onclick="showContent('about')">About</a>
     <a href="#" onclick="showContent('contact')">Contact</a>
@@ -30,12 +33,31 @@
 
   <div class="content" id="about" style="display: none;">
     <h1>About Us</h1>
-    <p>This is the about page content.</p>
+    <p> Welcome to our Library Management System! We are dedicated to providing efficient and effective library services
+        for both librarians and library users. Our system is designed to streamline various library operations, making
+        the management of books, patrons, and transactions more convenient and accessible.</p>
+        <h2>Our Mission:</h2>
+    <p>Our mission is to empower libraries with modern tools and technologies, fostering a dynamic and engaging environment
+        for both learning and community building. We strive to contribute to the enhancement of educational and recreational
+        experiences through effective library management.</p>
   </div>
 
   <div class="content" id="contact" style="display: none;">
     <h1>Contact Us</h1>
-    <p>This is the contact page content.</p>
+    <p>Have questions, suggestions, or need assistance? Feel free to reach out to us using the contact form below.</p>
+  
+      <form action="#" method="post">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+  
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required>
+  
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+  
+        <button type="submit">Send Message</button>
+      </form>
   </div>
 
   <script src="index.js"></script>
