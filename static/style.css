@@ -13,7 +13,7 @@ body{
     justify-content: center;
     align-items:center;
     min-height: 100vh;
-    background: "{{url_for('static', filename='books-1204029_640.jpg')}}"no-repeat;
+    background: url('img1.jpg')no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -28,7 +28,7 @@ label{
     width: 750px;
     background: rgba(255, 255, 255, .1);
     border: 2px solid rgba(255, 255, 255, .2);
-    box-shadow: 0 0 10px rgba(255, 255, 255, .2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
     backdrop-filter: blur(50px);
     border-radius: 10px;
     color:white;
@@ -37,7 +37,7 @@ label{
 }
 
 
-.wrapper{
+.wrapper h2{
     font-size: 36px;
     text-align: center;
     margin-bottom: 20px;
@@ -57,20 +57,21 @@ label{
     position: relative;
     width: 48%;
     height: 50px;
-    background: linear-gradient(to right, #000000, #333333);
+    background: linear-gradient(to right, #000000, #333333); 
     margin: 13px 0;
 
 }
 
-.input.box.input.field{
+.input.box.input.field input{
     width: 100%;
     height: 100%;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .2);
     outline: none;
-    font-size: 16px;
+    font-size: 20px;
     color:black;
     border-radius: 6px;
+    padding:15px 15px 15px 40px;
 
 }
 
@@ -82,7 +83,20 @@ label{
     position: absolute;
     top:50%;
     transform: translateY(-50%);
+    font-size: 20px;
     left: 15px;
+}
+
+.wrapper label{
+    display: inline-block;
+    font-size: 14.5px;
+    margin: 10px 0 23px;
+}
+
+.wrapper label input{
+    accent-color: white;
+    margin-right: 5px;
+
 }
 
 .wrapper.btn{
@@ -95,22 +109,14 @@ label{
     box-shadow: 0 0 10px rgba(0,0, 0, .1);
     cursor:pointer;
     font-size: 16px;
-    color:grey;
+    color:black;
     font-weight: 600;
 
 
 }
-.wrapper label{
-    display: inline-block;
-    font-size: 14.5px;
-    margin: 10px 0 23px;
-}
 
-.wrapper label input{
-    accent-color: white;
-    margin-right: 5px;
 
-}
+
 
 
 @media(max-width:576px){
