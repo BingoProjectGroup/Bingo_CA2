@@ -42,8 +42,27 @@ main {
 
 #dashboard {
     display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
+    flex-direction: column; /* Adjusted to column layout */
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+    height: 100vh; /* Set height to 100% of the viewport height */
+}
+
+/* New class for the search container */
+.search-container {
+    display: flex;
+    align-items: center; /* Center content horizontally */
+    margin-top: 20px; /* Added margin to the top of the search container */
+}
+
+/* Added margin to the "See All Books" button */
+#seeAllBooksBtn {
+    margin-bottom: 20px; /* Added margin to the bottom of the button */
+}
+
+/* Added margin between the search input and button */
+#searchInput {
+    margin-right: 10px; /* Adjusted margin to your preference */
 }
 
 footer {
