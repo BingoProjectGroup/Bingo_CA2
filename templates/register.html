@@ -1,56 +1,73 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>User Registration</title>
-<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
-<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-</head>
-<body>
-  <form action="/register" method="POST">
-    <div class=" wrapper">
-      <form action="">
-        <h1>REGISTRATION</h1>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Registration</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <form id="form">
+        <h2>REGISTER WITH US</h2>
+
         <div class="input-box">
-          <div class= "input-field">
-            <input type="text", name="username", placeholder="Username" required>
-            <i class='bx bxs-user'></i>
+          <div class="input-field">
+            <input type="text" id="username" placeholder="Username" />
+            <i class="bx bxs-user"></i>
           </div>
-        </div>
-            
-        <div class="input-box">
-          <div class= "input-field">
-            <input type="text", name="email", placeholder="Email" required>
-            <i class='bx bx-envelope'></i>
-          </div>
+          <small></small>
         </div>
 
         <div class="input-box">
           <div class="input-field">
-            <input type="number", name="phone", placeholder="Phone number" required>
-            <i class='bx bxs-phone' ></i>
+            <input type="email" id="email" placeholder="Email" />
+            <i class="bx bxs-envelope"></i>
           </div>
-        </div>
-        
-        <div class="input-box">
-          <div class= "input-field">
-            <input type="password", name="password", placeholder="Password" required>
-            <i class='bx bx-lock' ></i>
-          </div>
+          <small></small>
         </div>
 
         <div class="input-box">
           <div class="input-field">
-            <input type="password", name="confirm-password", placeholder="Confirm-Password" required>
-            <i class='bx bx-lock' ></i>
+            <input type="tel" id="phoneNumber" placeholder="Phone Number" />
+            <i class="bx bxs-phone"></i>
           </div>
+          <small></small>
         </div>
 
-        <label><input type="checkbox">I hereby declare that the  above information provided is true</label><br><br>
-        <button type="submit" name="submit">Register</button>
+        <div class="input-box">
+          <div class="input-field">
+            <input type="password" id="password" placeholder="Password" />
+            <i class="bx bxs-lock"></i>
+          </div>
+          <small></small>
+        </div>
+
+        <div class="input-box">
+          <div class="input-field">
+            <input
+              type="password"
+              id="confirmPassword"
+              placeholder="Confirm Password"
+            />
+            <i class="bx bxs-lock"></i>
+          </div>
+          <small></small>
+        </div>
+
+        <label
+          ><input type="checkbox" />I hereby declare that above information is
+          true and correct</label
+        ><br /><br />
+        <button type="submit" class="btn">Register</button>
       </form>
     </div>
-  </form>    
-</body>
+
+    <script src="register.js"></script>
+  </body>
 </html>
