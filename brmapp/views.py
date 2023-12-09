@@ -37,3 +37,8 @@ def editBookView(request):
     book=Book.objects.get(id=request.GET['bookid'])
     print(book)
     return render(request,"edit-book.html",{"book":book})  
+
+def deleteBookView(request):
+    book=Book.objects.get(id=request.GET['bookid'])
+    book.delete()
+    return HttpResponseRedirect('/') 
