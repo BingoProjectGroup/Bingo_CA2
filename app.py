@@ -74,7 +74,7 @@ def login():
     if record:
       session['loggedin']=True
       session['username']=record[0];
-      return redirect(url_for('dashboard'))
+      return redirect(url_for('admin_dash'))
 
     else:
       msg='Incorrect username//password. Try again!'
