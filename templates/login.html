@@ -11,7 +11,7 @@
     <div class="logo">
       <img src="{{url_for('static', filename='bookicon3.png')}}" alt="Logo">
     </div>
-    <a href="#" onclick="loadHome('home')">Home</a>
+    <a href="{{ url_for('index') }}">Home</a>
     <!-- <a href="{{url_for('templates', filename='bookicon3.png')}}" onclick="showContent('about')">About</a>
     <a href="{{url_for('templates', filename='bookicon3.png')}}" onclick="showContent('contact')">Contact</a> -->
   </nav>
