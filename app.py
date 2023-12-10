@@ -89,7 +89,7 @@ def login():
       
   return render_template('login.html',msg=msg)
 
-def email_exists_in_db(email){
+def email_exists_in_db(email):
   cur = mysql.cursor() #create a connection to the SQL instance
   cur.execute('SELECT * FROM user WHERE email=%s',(email))
   record=cur.fetchone()
@@ -97,7 +97,7 @@ def email_exists_in_db(email){
     return True
   else:
     return False
-}
+
 
 @app.route("/logout")
 def logout():
