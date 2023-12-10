@@ -65,7 +65,6 @@ def login():
   if request.method == 'POST':
     email = request.form['email']
     password=request.form['password']
-    #print(email,studentId)
     cur = mysql.cursor() #create a connection to the SQL instance
     
     cur.execute('SELECT * FROM user WHERE email=%s AND password=%s',(email,password))
@@ -82,6 +81,7 @@ def login():
 
     else:
       msg='Incorrect username/password. Try again!'
+      return render_template('login.html',msg=msg)
       
   return render_template('login.html',msg=msg)
 
