@@ -74,10 +74,14 @@ def login():
     if record:
       session['loggedin']=True
       session['username']=record[0];
-      return redirect(url_for('dashboard'))
+
+      if record[1]=='firstadmin@mydbs.ie' or record[1]=='secondadmin@mydbs.ie' or record[1]=='thirdadmin@mydbs.ie' or record[1]=='forthadmin@mydbs.ie':
+        return redirect(url_for('dashboard'))
+      else:
+        return redirect(url_for('dashboard'))
 
     else:
-      msg='Incorrect username//password. Try again!'
+      msg='Incorrect username/password. Try again!'
       
   return render_template('login.html',msg=msg)
 
