@@ -61,6 +61,8 @@ def register():
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
+  data=request.get_json()
+  email=data.get('email')
   msg=''
   if request.method == 'POST':
     email = request.form['email']
@@ -75,15 +77,27 @@ def login():
       session['username']=record[0];
 
       if record[1]=='firstadmin@mydbs.ie' or record[1]=='secondadmin@mydbs.ie' or record[1]=='thirdadmin@mydbs.ie' or record[1]=='forthadmin@mydbs.ie':
-        return redirect(url_for('dashboard'))
+        #return redirect(url_for('dashboard'))
+        return jsonify({'success': True, 'message': 'Login successful'})
       else:
         return redirect(url_for('dashboard'))
 
     else:
-      msg='Incorrect username/password. Try again!'
-      return render_template('login.html',msg=msg)
+      #msg='Incorrect username/password. Try again!'
+      #return render_template('login.html',msg=msg)
+      return jsonify({'success': False, 'message': 'Email not found in the database'})
       
   return render_template('login.html',msg=msg)
+
+def email_exists_in_db(email){
+  cur = mysql.cursor() #create a connection to the SQL instance
+  cur.execute('SELECT * FROM user WHERE email=%s',(email))
+  record=cur.fetchone()
+  if record:
+    return True
+  else:
+    return False
+}
 
 @app.route("/logout")
 def logout():
