@@ -23,28 +23,3 @@ function validateEmail() {
       }
     });
   });
-
-  function submitLoginForm() {
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-
-    // Make a POST request to the Flask backend
-    fetch('/login', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password }),
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            // Redirect or perform other actions on successful login
-            alert(data.message);
-        } else {
-            // Display error message
-            document.getElementById('error-message').textContent = data.message;
-        }
-    })
-    .catch(error => console.error('Error:', error));
-}

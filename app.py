@@ -49,7 +49,7 @@ def register():
     password=request.form['password']
     print(username,email)
     cur = mysql.cursor() #create a connection to the SQL instance
-    s="INSERT INTO user(username, email, password) VALUES('{}','{}','{}');".format(username,email,password)
+    s="INSERT INTO user(username, email, phone, password) VALUES('{}','{}','{}','{}');".format(username,email,phone,password)
     app.logger.info(s)
     cur.execute(s)
     mysql.commit()
@@ -61,8 +61,6 @@ def register():
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
-  data=request.get_json()
-  email=data.get('email')
   msg=''
   if request.method == 'POST':
     email = request.form['email']
@@ -77,27 +75,19 @@ def login():
       session['username']=record[0];
 
       if record[1]=='firstadmin@mydbs.ie' or record[1]=='secondadmin@mydbs.ie' or record[1]=='thirdadmin@mydbs.ie' or record[1]=='forthadmin@mydbs.ie':
-        #return redirect(url_for('dashboard'))
-        return jsonify({'success': True, 'message': 'Login successful'})
+        #if logged n as admin, goto admin dashboard
+        return redirect(url_for('dashboard'))
+        
       else:
+        #if logged in as user, goto user dashboard
         return redirect(url_for('dashboard'))
 
     else:
-      #msg='Incorrect username/password. Try again!'
-      #return render_template('login.html',msg=msg)
-      return jsonify({'success': False, 'message': 'Email not found in the database'})
+      msg='Incorrect username/password. Try again!'
+      return render_template('login.html',msg=msg)
+    
       
   return render_template('login.html',msg=msg)
-
-def email_exists_in_db(email):
-  cur = mysql.cursor() #create a connection to the SQL instance
-  cur.execute('SELECT * FROM user WHERE email=%s',(email))
-  record=cur.fetchone()
-  if record:
-    return True
-  else:
-    return False
-
 
 @app.route("/logout")
 def logout():
