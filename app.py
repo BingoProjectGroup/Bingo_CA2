@@ -46,6 +46,7 @@ def register():
   if request.method == 'POST':
     username = request.form['username']
     email = request.form['email']
+    phone=request.form['phone']
     password=request.form['password']
     print(username,email)
     cur = mysql.cursor() #create a connection to the SQL instance
