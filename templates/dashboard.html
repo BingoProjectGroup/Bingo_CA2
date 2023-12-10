@@ -8,9 +8,7 @@
 <body>
     <div>  
         <h2>Welcome, {{username}}</h2>
-    </div>
-    <div>
-        <button id="logout" onclick="redirectToIndex()">Logout</button>
+        <a href="{{url_for('logout')}}">Logout</a>
     </div>
 
     <script>
