@@ -23,4 +23,13 @@ function validateEmail() {
       }
     });
   });
+
+  function loadHome(pageName){
+      // Use pushState to change the URL without triggering a page reload
+      history.pushState({}, '', pageName + '.html');
+            
+      // Here, I'm simply reloading the current page for demonstration purposes
+      location.reload();
+
+  }
   
