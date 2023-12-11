@@ -8,7 +8,8 @@ from.models import Book
 # Create your views here.
 
 def registerPage(request):
-    context={}
+    form=UserCreationForm()
+    context={'form'}
     return render(request,'register.html', context)
 
 def loginPage(request):
