@@ -5,13 +5,14 @@ from django.contrib.auth.forms import UserCreationForm
 
 
 from.models import Book
+form.forms import CreateUserForm
 # Create your views here.
 
 def registerPage(request):
-    form=UserCreationForm()
+    form=CreateUserForm()
 
     if request.method=='POST':
-        form=UserCreationForm(request.POST)
+        form=CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
 
