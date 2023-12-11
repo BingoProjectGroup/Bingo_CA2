@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-$&$&f%g6j1bpq7-)6r8j+j3kkwpkr3ls2$ugk58zk8)&#ej@s_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['20.68.250.178','bingo.uksouth.cloudapp.azure.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
