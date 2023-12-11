@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('form');
     const username = document.getElementById('username');
     const email = document.getElementById('email');
-    const phoneNumber = document.getElementById('phoneNumber');
+    const phone = document.getElementById('phone');
     const password = document.getElementById('password');
     const confirmPassword = document.getElementById('confirmPassword');
 
@@ -44,10 +44,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         if (phoneNumber.value.trim() === '') {
-            showError(phoneNumber, 'Phone number is required');
+            showError(phone, 'Phone number is required');
             isFormValid = false;
         } else if (!isValidPhoneNumber(phoneNumber.value)) {
-            showError(phoneNumber, 'Phone number must be a 10-digit number');
+            showError(phone, 'Phone number must be a 10-digit number');
             isFormValid = false;
         } else {
             showSuccess(phoneNumber);
