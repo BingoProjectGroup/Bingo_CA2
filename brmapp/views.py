@@ -5,7 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 
 
 from.models import Book
-form.forms import CreateUserForm
+from.forms import CreateUserForm
 # Create your views here.
 
 def registerPage(request):
