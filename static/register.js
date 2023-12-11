@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
             showSuccess(email);
         }
 
-        if (phoneNumber.value.trim() === '') {
+        if (phone.value.trim() === '') {
             showError(phone, 'Phone number is required');
             isFormValid = false;
         } else if (!isValidPhoneNumber(phoneNumber.value)) {
