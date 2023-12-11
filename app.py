@@ -50,7 +50,7 @@ def register():
     password=request.form['password']
     print(username,email)
     cur = mysql.cursor() #create a connection to the SQL instance
-    s="INSERT INTO user(username, email, password, phone) VALUES('{}','{}','{}','{}');".format(username,email,password,phone)
+    s="INSERT INTO user(userName, email, password, phone) VALUES('{}','{}','{}','{}');".format(username,email,password,phone)
     app.logger.info(s)
     cur.execute(s)
     mysql.commit()
