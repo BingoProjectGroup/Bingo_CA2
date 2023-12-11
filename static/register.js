@@ -46,11 +46,11 @@ document.addEventListener('DOMContentLoaded', function () {
         if (phone.value.trim() === '') {
             showError(phone, 'Phone number is required');
             isFormValid = false;
-        } else if (!isValidPhoneNumber(phoneNumber.value)) {
+        } else if (!isValidPhoneNumber(phone.value)) {
             showError(phone, 'Phone number must be a 10-digit number');
             isFormValid = false;
         } else {
-            showSuccess(phoneNumber);
+            showSuccess(phone);
         }
 
         if (password.value.trim() === '') {
