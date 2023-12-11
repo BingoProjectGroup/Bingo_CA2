@@ -6,6 +6,8 @@ from .views import helloView,addBookView,addBook,editBookView,editBook,deleteBoo
 urlpatterns = [
     
     path("",helloView),
+    path("register/",registerPage),
+    path("login/",loginPage),
     path("add-book/",addBookView),
     path("add-book/addbookdata",addBook),
     path("edit-book/",editBookView),

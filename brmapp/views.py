@@ -1,8 +1,21 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse,HttpResponseRedirect
+from django.forms import inlineformset_factory
+from django.contrib.auth.forms import UserCreationFrom
+
 
 from.models import Book
 # Create your views here.
+
+def registerPage(request):
+    context={}
+    return render(request,'/register.html', context)
+
+def loginPage(request):
+    context={}
+    return render(request,'/login.html', context)
+
+
 def helloView(request):
     books=Book.objects.all()
     return render(request,"viewbook.html",{"books":books})
