@@ -9,7 +9,7 @@ from.models import Book
 
 def registerPage(request):
     form=UserCreationForm()
-    context={'form'}
+    context={'form':form}
     return render(request,'register.html', context)
 
 def loginPage(request):
