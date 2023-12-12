@@ -8,6 +8,7 @@ urlpatterns = [
     path("",helloView),
     path("register/",registerPage),
     path("login/",loginPage),
+    path("logout/",logoutUser),
     path("add-book/",addBookView),
     path("add-book/addbookdata",addBook),
     path("edit-book/",editBookView),
