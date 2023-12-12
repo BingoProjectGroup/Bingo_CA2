@@ -5,7 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-
+from django.contrib.auth.decorators import login login_required
 
 from.models import Book
 from.forms import CreateUserForm
@@ -45,7 +45,7 @@ def logoutUser(request):
     logout(request)
     return redirect('login')
 
-
+login_required(login_url='login')
 def helloView(request):
     books=Book.objects.all()
     return render(request,"viewbook.html",{"books":books})
