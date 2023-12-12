@@ -39,7 +39,7 @@ def loginPage(request):
             messages.info(request, 'Username or password is incorrect')                   
 
     context={}
-    return render(request,'login.html', context)
+    return render(request,'log.html', context)
 
 def logoutUser(request):
     logout(request)
