@@ -41,6 +41,9 @@ def loginPage(request):
     context={}
     return render(request,'login.html', context)
 
+def logoutUser(request):
+    return redirect('login')
+
 
 def helloView(request):
     books=Book.objects.all()
