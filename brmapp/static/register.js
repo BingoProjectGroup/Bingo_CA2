@@ -62,13 +62,6 @@ document.addEventListener('DOMContentLoaded', function () {
             showSuccess(confirmPassword);
         }
 
-        if (isFormValid) {
-
-            alert('Form submitted successfully!');
-        } else {
-
-            alert('Form submission failed. Please check the errors and try again.');
-        }
     });
 
     function isValidEmail(email) {
