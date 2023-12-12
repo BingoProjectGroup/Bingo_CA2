@@ -19,51 +19,52 @@
     <form id="form" action="/register" method="POST">
       {% csrf_token %}
 
-      <h2>REGISTER WITH US</h2>
-      <div id="formContent">  
-      <div class="input-box">
-        {{form.username.label}}
-        <div class="input-field" >
-          {{form.username}}
-          <i class="bx bxs-user"></i>
+      
+      <div id="formContent"> 
+        <h2>REGISTER WITH US</h2> 
+        <div class="input-box">
+          {{form.username.label}}
+          <div class="input-field" >
+            {{form.username}}
+            <i class="bx bxs-user"></i>
+          </div>
+          <small></small>
         </div>
-        <small></small>
-      </div>
 
-      <div class="input-box">
-        {{form.email.label}}
-        <div class="input-field">
-          {{form.email}}
-          <i class="bx bxs-envelope"></i>
+        <div class="input-box">
+          {{form.email.label}}
+          <div class="input-field">
+            {{form.email}}
+            <i class="bx bxs-envelope"></i>
+          </div>
+          <small></small>
         </div>
-        <small></small>
-      </div>
 
-      <div class="input-box">
-        {{form.password1.label}}
-        <div class="input-field">
-          {{form.password1}}
-          <i class="bx bxs-lock"></i>
+        <div class="input-box">
+          {{form.password1.label}}
+          <div class="input-field">
+            {{form.password1}}
+            <i class="bx bxs-lock"></i>
+          </div>
+          <small></small>
         </div>
-        <small></small>
-      </div>
 
-      <div class="input-box">
-        {{form.password2.label}}
-        <div class="input-field">
-          {{form.password2}}
-          <i class="bx bxs-lock"></i>
+        <div class="input-box">
+          {{form.password2.label}}
+          <div class="input-field">
+            {{form.password2}}
+            <i class="bx bxs-lock"></i>
+          </div>
+          <small></small>
         </div>
-        <small></small>
-      </div>
 
-      <br><br>
+        <br><br>
 
-      <button type="submit" class="btn">Register</button>
+        <button type="submit" class="btn">Register</button>
 
-      <div>
-          Already have an account? <a href="#">Login</a>
-      </div>
+        <div>
+            Already have an account? <a href="#">Login</a>
+        </div>
       </div>
     </form>
   </div>

@@ -120,6 +120,7 @@ label{
 #formContent{
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 @media(max-width:576px){
     .input.box.input.field{
