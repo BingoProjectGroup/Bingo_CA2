@@ -30,7 +30,7 @@ def loginPage(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
 
-        user = authenticate(request, username=username, password=password
+        user = authenticate(request, username=username, password=password)
 
         if user is not None:
             login(request, user)
@@ -39,7 +39,7 @@ def loginPage(request):
             messages.info(request, 'Username or password is incorrect')                   
 
     context={}
-    return render(request,'login.html', context)
+    return render(request,'log.html', context)
 
 def logoutUser(request):
     logout(request)
