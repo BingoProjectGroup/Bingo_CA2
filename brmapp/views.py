@@ -34,7 +34,7 @@ def loginPage(request):
 
         if user is not None:
             login(request, user)
-            redirect('home')
+            return redirect('home')
                             
 
     context={}
