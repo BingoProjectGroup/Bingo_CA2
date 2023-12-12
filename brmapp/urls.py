@@ -1,11 +1,13 @@
 
 from django.contrib import admin
 from django.urls import path,include,re_path
-from .views import helloView,addBookView,addBook,editBookView,editBook,deleteBookView
+from .views import helloView,registerPage,loginPage,addBookView,addBook,editBookView,editBook,deleteBookView
 
 urlpatterns = [
     
     path("",helloView),
+    path("register/",registerPage),
+    path("login/",loginPage),
     path("add-book/",addBookView),
     path("add-book/addbookdata",addBook),
     path("edit-book/",editBookView),

@@ -1,73 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User Registration</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-  </head>
 
-  <body>
-    <div class="wrapper">
-      <form id="form" action="/register" method="POST">
-        <h2>REGISTER WITH US</h2>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
 
+<body>
+  <div class="wrapper">
+    <form id="form" action="" method="POST">
+      {% csrf_token %}
+
+      
+      <div id="formContent"> 
+        <h2>REGISTER WITH US</h2> 
         <div class="input-box">
-          <div class="input-field">
-            <input type="text" id="username" placeholder="Username" />
+          {{form.username.label}}
+          <div class="input-field" >
+            {{form.username}}
             <i class="bx bxs-user"></i>
           </div>
           <small></small>
         </div>
 
         <div class="input-box">
+          {{form.email.label}}
           <div class="input-field">
-            <input type="email" id="email" placeholder="Email" />
+            {{form.email}}
             <i class="bx bxs-envelope"></i>
           </div>
           <small></small>
         </div>
 
         <div class="input-box">
+          {{form.password1.label}}
           <div class="input-field">
-            <input type="tel" id="phone" placeholder="Phone Number" />
-            <i class="bx bxs-phone"></i>
-          </div>
-          <small></small>
-        </div>
-
-        <div class="input-box">
-          <div class="input-field">
-            <input type="password" id="password" placeholder="Password" />
+            {{form.password1}}
             <i class="bx bxs-lock"></i>
           </div>
           <small></small>
         </div>
 
         <div class="input-box">
+          {{form.password2.label}}
           <div class="input-field">
-            <input
-              type="password"
-              id="confirmPassword"
-              placeholder="Confirm Password"
-            />
+            {{form.password2}}
             <i class="bx bxs-lock"></i>
           </div>
           <small></small>
         </div>
 
-        <label
-          ><input type="checkbox" />I hereby declare that above information is
-          true and correct</label
-        ><br /><br />
-        <button type="submit" class="btn">Register</button>
-      </form>
-    </div>
+        <br><br>
 
-    <script src="{{ url_for('static', filename='register.js') }}"></script>
-  </body>
+        <input type="submit" class="btn" name="Create User">
+
+        {{form.errors}}
+
+        <div>
+            Already have an account? <a href="/login">Login</a>
+        </div>
+      </div>
+    </form>
+  </div>
+  
+     
+</body>
 </html>
+

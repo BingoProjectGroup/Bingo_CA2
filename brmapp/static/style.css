@@ -45,12 +45,8 @@ label{
 
 }
 
-.wrapper.input-box{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    background: rgb(23, 55, 87);
-
+.input-box{
+    padding: 5px
 }
 
 .input.box.input.field{
@@ -99,7 +95,7 @@ label{
 
 }
 
-.wrapper.btn{
+.btn{
     width: 100%;
     height: 45px;
     background: white;
@@ -111,14 +107,18 @@ label{
     font-size: 16px;
     color:black;
     font-weight: 600;
-
-
 }
 
-
-
-
-
+#form{
+    display: flex;
+    justify-content: center;
+}
+#formContent{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
 @media(max-width:576px){
     .input.box.input.field{
         width: 100%;

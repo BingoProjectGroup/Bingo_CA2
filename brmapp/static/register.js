@@ -1,10 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('form');
-    const username = document.getElementById('username');
-    const email = document.getElementById('email');
-    const phone = document.getElementById('phone');
-    const password = document.getElementById('password');
-    const confirmPassword = document.getElementById('confirmPassword');
+    const username = document.getElementById('id_username');
+    const email = document.getElementById('id_email');
+    const password = document.getElementById('id_password1');
+    const confirmPassword = document.getElementById('id_password2');
 
 
     function showError(input, message) {
@@ -43,16 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
             showSuccess(email);
         }
 
-        if (phone.value.trim() === '') {
-            showError(phone, 'Phone number is required');
-            isFormValid = false;
-        } else if (!isValidPhoneNumber(phone.value)) {
-            showError(phone, 'Phone number must be a 10-digit number');
-            isFormValid = false;
-        } else {
-            showSuccess(phone);
-        }
-
         if (password.value.trim() === '') {
             showError(password, 'Password is required.');
             isFormValid = false;
@@ -73,22 +62,10 @@ document.addEventListener('DOMContentLoaded', function () {
             showSuccess(confirmPassword);
         }
 
-        if (isFormValid) {
-
-            alert('Form submitted successfully!');
-        } else {
-
-            alert('Form submission failed. Please check the errors and try again.');
-        }
     });
 
     function isValidEmail(email) {
         const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
-    }
-
-    function isValidPhoneNumber(phoneNumber) {
-        const re = /^\d{10}$/; // 10 digits
-        return re.test(phoneNumber);
     }
 });
