@@ -1,18 +1,2 @@
 {% extends 'viewbook.html' %}
 
-{% block content %}
-
-<table>
-
-    <tbody>
-    {% for i in books %}
-      <tr>
-        <th>{{forloop.counter}}</th>
-        <td>{{i.title}}</td>
-        <td>{{i.price}}</td>
-
-    {% endfor %}
-      
-    </tbody>
-</table>
-{% endblock %}
