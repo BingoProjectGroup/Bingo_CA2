@@ -55,10 +55,13 @@
                 <th scope="row">{{forloop.counter}}</th>
                 <td>{{i.title}}</td>
                 <td>{{i.price}}</td>
+
+                {% if request.user.is_staff %}
                 <td>
                     <a href="/edit-book?bookid={{i.id}}"><button type="button" class="btn btn-primary">Edit</button></a>
                   <a href="/delete-book?bookid={{i.id}}"><button type="button" class="btn btn-danger">Delete</button></a>
                 </td>
+                {% endif %}
               </tr>
             {% endfor %}
               
