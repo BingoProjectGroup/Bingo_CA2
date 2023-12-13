@@ -28,8 +28,9 @@
           </ul>
         
         </div>
-        <span>Hello, {{request.username}}</span>
-        <span><a href="/logout">Logout</a></span>
+        <div>
+        <span>Hello, {{request.user}} <a href="/logout">Logout</a></span>
+        </div>
       </nav>
 
       <div class="container">
