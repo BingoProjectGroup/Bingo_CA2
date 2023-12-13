@@ -56,7 +56,7 @@ def logoutUser(request):
 
 def userPage(request):
     context={}
-    return render(request, 'user.html')
+    return render(request, 'user.html',{"books":books})
 
 @login_required(login_url='/login')
 @admin_only
