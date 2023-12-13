@@ -45,19 +45,19 @@
     </div>
     <br>
     <div>
-      <input type="button" value="Login" name="login">
+      <input type="submit" value="Login" name="login">
     </div>
-    
+    <div>
+      {% for message in messages %}
+      <p>{{message}}</p>
+      {% endfor %}
+      <div>Don't have an account? 
+        <a href="/register">Sign Up</a>
+      </div>  
+    </div>
   </form>
  </div>
-<div>
-  {% for message in messages %}
-  <p>{{message}}</p>
-  {% endfor %}
-  <div>Don't have an account? 
-    <a href="/register">Sign Up</a>
-  </div>  
-</div>
+
 
 </body>
 </html>
