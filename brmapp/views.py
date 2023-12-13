@@ -11,7 +11,7 @@ from django.contrib.auth.models import Group
 
 from.models import Book
 from.forms import CreateUserForm
-from.decorators import unauthenticated_user
+from.decorators import unauthenticated_user,admin_only,allowed_users
 # Create your views here.
 
 @unauthenticated_user
