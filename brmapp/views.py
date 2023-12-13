@@ -4,6 +4,7 @@ from django.forms import inlineformset_factory
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 
+from django.contrib.auth import authenticate, login, logout
 
 from.models import Book
 from.forms import CreateUserForm
@@ -24,6 +25,19 @@ def registerPage(request):
     return render(request,'register.html', context)
 
 def loginPage(request):
+    if request.method=='POST':
+        request.POST.get('email')
+        request.POST.get('password')
+
+        user=authenticate(request, email=email, password=password)
+
+        if user is not None:
+            login(request, user)
+            return redirect('viewbook')
+        else:
+            messages.info(request,'Email or Password is incorrect')
+
+
     context={}
     return render(request,'login.html', context)
 

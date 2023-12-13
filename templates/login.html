@@ -22,7 +22,9 @@
     <a href="#" onclick="showContent('about')">About</a>
     <a href="#" onclick="showContent('contact')">Contact</a>
   </nav>
+  <div id=formContainer></div>
   <form action="" method="POST">
+    {% csrf_token %}
     <div>
       <h3>LOGIN</h3>
     </div>
@@ -47,10 +49,15 @@
     </div>
     
   </form>
-
+ </div>
+<div>
+  {% for message in messages %}
+  <p>{{}}</p>
+  {% endfor %}
   <div>Don't have an account? 
     <a href="/register">Sign Up</a>
   </div>  
+</div>
 
 </body>
 </html>
