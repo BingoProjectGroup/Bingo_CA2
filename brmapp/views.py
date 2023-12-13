@@ -33,7 +33,7 @@ def loginPage(request):
 
         if user is not None:
             login(request, user)
-            return redirect('')
+            return redirect('helloView')
         else:
             messages.info(request,'Email or Password is incorrect')
 
