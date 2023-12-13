@@ -14,7 +14,6 @@
 
 </head>
 <body>
-  <h1>Login</h1>
   <nav>
     <div class="logo">
       
@@ -23,27 +22,42 @@
     <a href="#" onclick="showContent('about')">About</a>
     <a href="#" onclick="showContent('contact')">Contact</a>
   </nav>
+  <div id=formContainer></div>
   <form action="" method="POST">
+    {% csrf_token %}
+    <div>
+      <h3>LOGIN</h3>
+    </div>
     <div>  
-      <label for="email">Registered Email:</label>
-      <input type="text", name="email" required>
-      <i class="bx bxs-envelope"></i>
+      <label for="username">Username:</label>
+      <div id=input-box>
+      <input type="text", name="username" required>
+      <i class="bx bxs-user"></i>
+      </div>
     <div id="emailError" class="error"></div>
     <br>
     <div>
       <label for="password">Password:</label>
+      <div id=input-box>
       <input type="password", name="password" required>
       <i class="bx bxs-lock"></i>
+      </div>
     </div>
     <br>
     <div>
-      <input type="button" value="Login" name="login">
+      <input type="submit" value="Login" name="login">
     </div>
-    
+    <div>
+      {% for message in messages %}
+      <p>{{message}}</p>
+      {% endfor %}
+      <div>Don't have an account? 
+        <a href="/register">Sign Up</a>
+      </div>  
+    </div>
   </form>
+ </div>
 
-  <div>Don't have an account? <a href="/register">Sign Up</a></div>
-  
 
 </body>
 </html>
