@@ -18,12 +18,15 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav mr-auto">
+
+            {% if request.user.is_staff %}
             <li class="nav-item active">
               <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="/add-book">add book </a>
+                <a class="nav-link" href="/add-book">Add Book </a>
             </li>
+            {% endif %}
             
           </ul>
         
@@ -55,7 +58,6 @@
                 <td>
                     <a href="/edit-book?bookid={{i.id}}"><button type="button" class="btn btn-primary">Edit</button></a>
                   <a href="/delete-book?bookid={{i.id}}"><button type="button" class="btn btn-danger">Delete</button></a>
-                    <button type="button" class="btn btn-danger">Delete</button>
                 </td>
               </tr>
             {% endfor %}
