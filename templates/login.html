@@ -26,14 +26,18 @@
   <form action="" method="POST">
     <div>  
       <label for="email">Registered Email:</label>
+      <div id=input-box></div>
       <input type="text", name="email" required>
       <i class="bx bxs-envelope"></i>
+      </div>
     <div id="emailError" class="error"></div>
     <br>
     <div>
       <label for="password">Password:</label>
+      <div id=input-box>
       <input type="password", name="password" required>
       <i class="bx bxs-lock"></i>
+      </div>
     </div>
     <br>
     <div>
@@ -42,8 +46,9 @@
     
   </form>
 
-  <div>Don't have an account? <a href="/register">Sign Up</a></div>
-  
+  <div>Don't have an account? 
+    <a href="/register">Sign Up</a>
+  </div>  
 
 </body>
 </html>

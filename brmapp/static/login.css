@@ -1,5 +1,5 @@
 body {
-    background-image: url("../static/book2.jpg");
+    background-image: url('book2.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -29,6 +29,10 @@ body {
     height: auto;
   }
 
+#input-box{
+  display: flex;
+  flex-direction: row;
+}
 form {
     max-width: 400px;
     margin: 50px auto;
