@@ -56,6 +56,7 @@ def logoutUser(request):
 
 def userPage(request):
     context={}
+    books=Book.objects.all()
     return render(request, 'user.html',{"books":books})
 
 @login_required(login_url='/login')
