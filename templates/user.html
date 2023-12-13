@@ -3,20 +3,24 @@
 {% block content %}
 
 <table>
-<tbody>
+    <thead>
+        <tr>
+          <th scope="col">index</th>
+          <th scope="col">Title</th>
+          <th scope="col">Price</th>
+          {% if request.user.is_staff %}
+          <th scope="col">Action</th>
+          {% endif %}
+        </tr>
+    </thead>
+    
+    <tbody>
     {% for i in books %}
       <tr>
         <th scope="row">{{forloop.counter}}</th>
         <td>{{i.title}}</td>
         <td>{{i.price}}</td>
 
-        {% if request.user.is_staff %}
-        <td>
-            <a href="/edit-book?bookid={{i.id}}"><button type="button" class="btn btn-primary">Edit</button></a>
-          <a href="/delete-book?bookid={{i.id}}"><button type="button" class="btn btn-danger">Delete</button></a>
-        </td>
-        {% endif %}
-      </tr>
     {% endfor %}
       
     </tbody>

@@ -51,9 +51,7 @@
                 {% endif %}
               </tr>
             </thead>
-            <div id="content">
-              {% block content %}{% endblock %}
-            </div>
+          
             <tbody>
             {% for i in books %}
               <tr>
@@ -72,6 +70,9 @@
               
             </tbody>
           </table>
+          <div id="content">
+            {% block content %}{% endblock %}
+          </div>
       </div>
     
 
