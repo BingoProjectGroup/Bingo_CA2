@@ -46,9 +46,14 @@
                 <th scope="col">index</th>
                 <th scope="col">Title</th>
                 <th scope="col">Price</th>
+                {% if request.user.is_staff %}
                 <th scope="col">Action</th>
+                {% endif %}
               </tr>
             </thead>
+            <div id="content">
+              {% block content %}{% endblock %}
+            </div>
             <tbody>
             {% for i in books %}
               <tr>
