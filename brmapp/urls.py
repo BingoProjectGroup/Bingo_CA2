@@ -5,7 +5,7 @@ from .views import helloView,registerPage,loginPage,addBookView,addBook,editBook
 
 urlpatterns = [
     
-    path("",helloView, name=helloView),
+    path("",helloView, name='helloView'),
     path("register/",registerPage),
     path("login/",loginPage),
     path("add-book/",addBookView),
