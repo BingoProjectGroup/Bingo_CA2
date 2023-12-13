@@ -51,10 +51,13 @@ def logoutUser(request):
 def helloView(request):
     books=Book.objects.all()
     return render(request,"viewbook.html",{"books":books})
+    
+@login_required(login_url='/login')
 def addBookView(request):
         
     return render(request,"addbook.html")
 
+@login_required(login_url='/login')
 def addBook(request):
      if request.method=="POST":
         t=request.POST["title"]
@@ -66,6 +69,7 @@ def addBook(request):
         book.save()
         return HttpResponseRedirect('/')
 
+@login_required(login_url='/login')
 def editBook(request):
     if request.method=="POST":
         t=request.POST["title"]
@@ -77,12 +81,13 @@ def editBook(request):
         book.save()
         return HttpResponseRedirect('/')   
 
-
+@login_required(login_url='/login')
 def editBookView(request):
     book=Book.objects.get(id=request.GET['bookid'])
     print(book)
     return render(request,"edit-book.html",{"book":book})  
 
+@login_required(login_url='/login')
 def deleteBookView(request):
     book=Book.objects.get(id=request.GET['bookid'])
     book.delete()
