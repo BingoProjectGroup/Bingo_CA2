@@ -26,10 +26,10 @@ def registerPage(request):
 
 def loginPage(request):
     if request.method=='POST':
-        request.POST.get('email')
-        request.POST.get('password')
+        email=request.POST.get('email')
+        password=request.POST.get('password')
 
-        user=authenticate(request, username=email, password=password)
+        user=authenticate(request, email=email, password=password)
 
         if user is not None:
             login(request, user)
