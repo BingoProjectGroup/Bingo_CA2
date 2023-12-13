@@ -29,7 +29,7 @@ def loginPage(request):
         request.POST.get('email')
         request.POST.get('password')
 
-        user=authenticate(request, email=email, password=password)
+        user=authenticate(request, username=email, password=password)
 
         if user is not None:
             login(request, user)
